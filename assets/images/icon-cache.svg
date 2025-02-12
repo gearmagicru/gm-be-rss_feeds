@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="21px" height="21px" viewBox="0 0 21 21" enable-background="new 0 0 21 21" xml:space="preserve">
+  <g id="icon">
+    <ellipse cx="10.5" cy="3.5" rx="7" ry="2" fill="none" stroke="#434a54" stroke-width="1" stroke-linecap="round" stroke-miterlimit="10" stroke-linejoin="round"/>
+    <path d="M17.5,8.1c0,1.215,-3.134,2.1,-7,2.1s-7,-0.885,-7,-2.1" fill="none" stroke="#999999" stroke-width="1" stroke-linecap="round" stroke-miterlimit="10" stroke-linejoin="round"/>
+    <path d="M17.5,12.6c0,1.3807,-3.134,2.3,-7,2.3s-7,-0.9193,-7,-2.3" fill="none" stroke="#999999" stroke-width="1" stroke-linecap="round" stroke-miterlimit="10" stroke-linejoin="round"/>
+    <path d="M17.5,16.5c0,1.6569,-3.134,3,-7,3s-7,-1.3431,-7,-3" fill="none" stroke="#999999" stroke-width="1" stroke-linecap="round" stroke-miterlimit="10" stroke-linejoin="round"/>
+    <line x1="3.5" y1="3.8" x2="3.5" y2="16.7" fill="none" stroke="#999999" stroke-width="1" stroke-linecap="round" stroke-miterlimit="10" stroke-linejoin="round"/>
+    <line x1="17.5" y1="3.8" x2="17.5" y2="16.7" fill="none" stroke="#999999" stroke-width="1" stroke-linecap="round" stroke-miterlimit="10" stroke-linejoin="round"/>
+  </g>
+</svg>

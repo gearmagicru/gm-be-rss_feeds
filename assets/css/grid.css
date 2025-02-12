@@ -1,0 +1,38 @@
+/*!
+ * Сетка (Grid).
+ * 
+ * Модуль "Управление RSS-каналами".
+ * 
+ * Copyright 2015 Вeб-студия GearMagic
+ * Copyright Anton Tivonenko <anton.tivonenko@gmail.com>
+ * https://gearmagic.ru/license/
+ */
+
+/* Заливка заднего фона сетки (см. идент. viewManager) */
+#gm-rssfeeds-grid .x-grid-view {
+    background: url("../images/watermark.svg") no-repeat calc(100% - 25px) calc(100% - 20px);
+    background-size: 100px;
+}
+
+
+/**
+ * Столбцы сетки.
+ */
+.gm-rssfeeds__icon-cache { 
+    background-size: 16px;
+    background-image: url("../images/icon-cache.svg"); }
+
+
+/**
+ * Панель инструментов сетки.
+ */
+ /* Значок "Добавить" */
+ .gm-rssfeeds__icon-add_large,
+ .gm-rssfeeds__icon-add_medium,
+ .gm-rssfeeds__icon-add { background-image: url("../images/icon-add.svg"); }
+ .gm-rssfeeds__icon-add_small { background-image: url("../images/icon-add_small.svg"); }
+ /* Значок "Удалить" */
+ .gm-rssfeeds__icon-delete_large,
+ .gm-rssfeeds__icon-delete_medium,
+ .gm-rssfeeds__icon-delete { background-image: url("../images/icon-delete.svg"); }
+ .gm-rssfeeds__icon-delete_small { background-image: url("../images/icon-delete_small.svg"); }
