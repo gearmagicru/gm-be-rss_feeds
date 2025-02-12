@@ -1,0 +1,356 @@
+[
+    {
+        "xtype": "combobox",
+        "fieldLabel": "#Format",
+        "tooltip": "#Web resource format",
+        "name": "format",
+        "store": {
+            "fields": ["value", "name"],
+            "data": [
+                ["RSS", "#RSS"], ["ATOM", "#ATOM"]
+            ]
+        },
+        "displayField": "name",
+        "valueField": "value",
+        "queryMode": "local",
+        "editable": false,
+        "allowBlank": false
+    },
+    {
+        "xtype": "textfield",
+        "maxLength": 255,
+        "fieldLabel": "#Title",
+        "tooltip": "#RSS feed name",
+        "name": "title",
+        "allowBlank": false
+    },
+    {
+        "xtype": "textfield",
+        "maxLength": 255,
+        "fieldLabel": "#Description",
+        "name": "description",
+        "allowBlank": false
+    },
+    {
+        "xtype": "textfield",
+        "maxLength": 255,
+        "fieldLabel": "#Channel",
+        "tooltip": "#RSS feed name in URL",
+        "name": "channel",
+        "allowBlank": false
+    },
+    {
+        "xtype": "checkbox",
+        "ui": "switch",
+        "fieldLabel": "#Enabled",
+        "checked": true,
+        "name": "enabled",
+        "inputValue": 1
+    },
+    {
+        "xtype": "checkbox",
+        "ui": "switch",
+        "fieldLabel": "#Caching",
+        "checked": true,
+        "name": "caching",
+        "inputValue": 1
+    },
+    {
+        "xtype": "fieldset",
+        "title": "#Channel options",
+        "collapsible": true,
+        "style": "margin-top:15px",
+        "defaults": {
+            "labelAlign": "right",
+            "labelWidth": 180,
+            "allowBlank": true
+        },
+        "items": [
+            {
+                "xtype": "g-field-combobox",
+                "fieldLabel": "#Language",
+                "tooltip": "#Language of RSS feed material",
+                "name": "language",
+                "hiddenName": "language",
+                "store": {
+                    "fields": ["id", "name"],
+                    "proxy": {
+                        "type": "ajax",
+                        "url": ["@backend/languages/trigger/combo"],
+                        "extraParams": {"combo": "language"},
+                        "reader": {
+                            "type": "array",
+                            "rootProperty": "data"
+                        }
+                    }
+                },
+                "displayField": "name",
+                "valueField": "id",
+                "editable": false,
+                "anchor": "100%"
+            },
+            {
+                "xtype": "textfield",
+                "fieldLabel": "#Image",
+                "tooltip": "#GIF, JPEG or PNG image, RSS feed",
+                "name": "options[image]",
+                "anchor": "100%"
+            },
+            {
+                "xtype": "textfield",
+                "fieldLabel": "#Icon",
+                "tooltip": "#GIF, JPEG or PNG image, RSS feed",
+                "name": "options[icon]",
+                "anchor": "100%"
+            },
+            {
+                "xtype": "textfield",
+                "maxLength": 255,
+                "fieldLabel": "#Copyright",
+                "tooltip": "#Copyright notice for channel content",
+                "name": "options[copyright]",
+                "anchor": "100%"
+            },
+            {
+                "xtype": "textfield",
+                "maxLength": 255,
+                "fieldLabel": "#E-mail webmaster",
+                "tooltip": "#Email address of the person responsible for technical issues related to the channel",
+                "name": "options[webmaster]",
+                "anchor": "100%"
+            },
+            {
+                "xtype": "textfield",
+                "fieldLabel": "#Category",
+                "tooltip": "#One or more categories to which the channel belongs",
+                "name": "options[category]",
+                "anchor": "100%"
+            },
+            {
+                "xtype": "textfield",
+                "fieldLabel": "#Documentation URL",
+                "tooltip": "#URL pointing to documentation on the format used in the RSS file",
+                "maxLength": 255,
+                "name": "options[docs]",
+                "anchor": "100%"
+            },
+            {
+                "xtype": "textfield",
+                "fieldLabel": "#Channel lifetime, min.",
+                "tooltip": "#A number of minutes that indicates how long a feed can be cached before being updated from the source",
+                "name": "options[ttl]",
+                "value": 0,
+                "width": 300
+            },
+            {
+                "xtype": "textfield",
+                "fieldLabel": "#PICS channel rating",
+                "maxLength": 255,
+                "name": "options[rating]",
+                "anchor": "100%"
+            },
+            {
+                "xtype": "combobox",
+                "fieldLabel": "#Skip hours",
+                "tooltip": "#Hint for aggregators telling them which hours (GMT) they can skip",
+                "name": "options[skipHours]",
+                "store": {
+                    "fields": ["value", "hour"],
+                    "data": [
+                        ["", "#[None]"],
+                        ["0", "0 GMT"], ["1", "1 GMT"], ["2", "2 GMT"], ["3", "3 GMT"], ["4", "4 GMT"], ["5", "5 GMT"], 
+                        ["6", "6 GMT"], ["7", "7 GMT"], ["8", "8 GMT"], ["9", "9 GMT"], ["10", "10 GMT"], ["11", "11 GMT"], 
+                        ["12", "12 GMT"], ["13", "13 GMT"], ["14", "14 GMT"], ["15", "15 GMT"], ["16", "16 GMT"], ["17", "17 GMT"], 
+                        ["18", "18 GMT"], ["19", "19 GMT"], ["20", "20 GMT"], ["21", "21 GMT"], ["22", "22 GMT"], ["23", "23 GMT"], 
+                        ["24", "24 GMT"]
+                    ]
+                },
+                "displayField": "hour",
+                "valueField": "value",
+                "queryMode": "local",
+                "editable": false,
+                "width": 300
+            },
+            {
+                "xtype": "combobox",
+                "fieldLabel": "#Skip days",
+                "tooltip": "#Hint for aggregators telling them which days can be skipped",
+                "name": "options[skipDays]",
+                "store": {
+                    "fields": ["value", "day"],
+                    "data": [
+                        ["", "#[None]"],
+                        ["Monday", "#Monday"], ["Tuesday", "#Tuesday"], ["Wednesday", "#Wednesday"], 
+                        ["Thursday", "#Thursday"], ["Friday", "#Friday"], ["Saturday", "#Saturday"],
+                        ["Sunday", "#Sunday"]
+                    ]
+                },
+                "displayField": "day",
+                "valueField": "value",
+                "queryMode": "local",
+                "editable": false,
+                "anchor": "100%"
+            },
+            {
+                "xtype": "label",
+                "ui": "header-line",
+                "text": "#Date of publication of the RSS feed:"
+            },
+            {
+                "xtype": "fieldcontainer",
+                "layout": "hbox",
+                "items": [
+                    {
+                        "xtype": "datefield",
+                        "fieldLabel": "#Date",
+                        "labelAlign": "right",
+                        "labelWidth": 50,
+                        "width": 155,
+                        "name": "published",
+                        "format": "d-m-Y",
+                        "allowBlank": true
+                    },
+                    {
+                        "xtype": "timefield",
+                        "name": "publishedTime",
+                        "fieldLabel": "#Time",
+                        "labelAlign": "right",
+                        "labelWidth": 50,
+                        "width":  150,
+                        "format": "H:i:s",
+                        "allowBlank":  true
+                    }
+                ]
+            },
+            {
+                "xtype": "label",
+                "ui": "header-line",
+                "text": "#Cloud registration:"
+            },
+            {
+                "xtype": "textfield",
+                "fieldLabel": "#Domain",
+                "maxLength": 255,
+                "name": "options[cloudDomain]",
+                "anchor": "100%"
+            },
+            {
+                "xtype": "numberfield",
+                "fieldLabel": "#Port",
+                "name": "options[cloudPort]",
+                "value": 0,
+                "minValue": 0,
+                "width": 250
+            },
+            {
+                "xtype": "textfield",
+                "fieldLabel": "#Path",
+                "name": "options[cloudPath]",
+                "anchor": "100%"
+            },
+            {
+                "xtype": "textfield",
+                "fieldLabel": "#Procedure",
+                "name": "options[cloudProcedure]",
+                "anchor": "100%"
+            },
+            {
+                "xtype": "textfield",
+                "fieldLabel": "#Protocol",
+                "name": "options[cloudProtocol]",
+                "anchor": "100%"
+            },
+            {
+                "xtype": "label",
+                "ui": "header-line",
+                "text": "#Author of the RSS feed:"
+            },
+            {
+                "xtype": "textfield",
+                "fieldLabel": "#Author's name",
+                "name": "options[authorName]",
+                "anchor": "100%"
+            },
+            {
+                "xtype": "textfield",
+                "fieldLabel": "#URL address",
+                "name": "options[authorUri]",
+                "anchor": "100%"
+            },
+            {
+                "xtype": "textfield",
+                "fieldLabel": "#E-mail",
+                "name": "options[authorEmail]",
+                "anchor": "100%"
+            },
+            {
+                "xtype": "label",
+                "ui": "header-line",
+                "text": "#Contributor of the RSS feed:"
+            },
+            {
+                "xtype": "textfield",
+                "fieldLabel": "#Contributor name",
+                "name": "options[contributorName]",
+                "anchor": "100%"
+            },
+            {
+                "xtype": "textfield",
+                "fieldLabel": "#URL address",
+                "name": "options[contributorUri]",
+                "anchor": "100%"
+            },
+            {
+                "xtype": "textfield",
+                "fieldLabel": "#E-mail",
+                "name": "options[contributorEmail]",
+                "anchor": "100%"
+            }
+        ]
+    },
+    {
+        "xtype": "fieldset",
+        "title": "#Channel content output options",
+        "collapsible": true,
+        "style": "margin-top:15px",
+        "defaults": {
+            "labelAlign": "right",
+            "labelWidth": 180,
+            "allowBlank": true
+        },
+        "items": [
+            {
+                "xtype": "g-field-combobox",
+                "fieldLabel": "#Category of material",
+                "tooltip": "#Category of material, section in which the material is located",
+                "name": "selector[category]",
+                "hiddenName": "selector[category]",
+                "store": {
+                    "fields": ["id", "name"],
+                    "proxy": {
+                        "type": "ajax",
+                        "url": ["@backend/article-categories/trigger/combo"],
+                        "extraParams": {"combo": "categories"},
+                        "reader": {
+                            "type": "array",
+                            "rootProperty": "data"
+                        }
+                    }
+                },
+                "displayField": "name",
+                "valueField": "id",
+                "editable": false,
+                "anchor": "100%"
+            },
+            {
+                "xtype": "numberfield",
+                "fieldLabel": "#Number of records",
+                "tooltip": "#Number of entries displayed in the RSS feed",
+                "name": "selector[limit]",
+                "value": 0,
+                "minValue": 0,
+                "width": 250
+            }
+        ]
+    }
+]
