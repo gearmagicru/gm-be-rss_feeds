@@ -1,0 +1,32 @@
+{
+    "name": "gearmagicru/gm-be-rss_feeds",
+    "description": "Control panel module \"Managing RSS Feeds\"",
+    "keywords": [
+        "gm",
+        "gearmagic",
+        "GM Panel",
+        "module",
+        "rss"
+    ],
+    "homepage": "https://apps.gearmagic.ru/component/gm-be-rss_feeds",
+    "type": "component",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Anton Tivonenko",
+            "email": "anton.tivonenko@gmail.com",
+            "homepage": "https://gearmagic.ru"
+        }
+    ],
+    "require": {
+        "gearmagicru/gm-composer-plugin": "*"
+    },
+    "extra": {
+        "gm": {
+            "id": "gm.be.rss_feeds",
+            "vendor": "gm"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
