@@ -1,13 +1,7 @@
 {
     "name": "gearmagicru/gm-be-rss_feeds",
-    "description": "Control panel module \"Managing RSS Feeds\"",
-    "keywords": [
-        "gm",
-        "gearmagic",
-        "GM Panel",
-        "module",
-        "rss"
-    ],
+    "description": "Control Panel module \"Managing RSS Feeds\"",
+    "keywords": ["gearmagic", "gm-panel", "gm-component", "gm-module", "module", "rss"],
     "homepage": "https://apps.gearmagic.ru/component/gm-be-rss_feeds",
     "type": "component",
     "license": "MIT",
