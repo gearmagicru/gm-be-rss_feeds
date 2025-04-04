@@ -12,8 +12,8 @@
 return [
     'name'        => 'Managing RSS Feeds',
     'description' => 'Managing your site\'s RSS feeds',
-    'version'     => '1.0',
-    'versionDate' => '20-12-2017',
+    'version'     => '1.0.1',
+    'versionDate' => '04-04-2025',
     'author'      => 'GearMagic',
     'authorUrl'   => 'https://gearmagic.ru',
     'email'       => 'anton.tivonenko@gmail.com',
